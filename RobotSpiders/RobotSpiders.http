@@ -1,0 +1,6 @@
+@RobotSpiders_HostAddress = http://localhost:5171
+
+GET {{RobotSpiders_HostAddress}}/RobotSpiders/
+Accept: application/json
+
+###

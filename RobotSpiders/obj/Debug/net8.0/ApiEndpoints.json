@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "RobotSpiders.Controllers.RobotSpidersController",
+    "Method": "JSONStart",
+    "RelativePath": "RobotSpiders/JSONStart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "RobotSpiders.DTO.SpiderNavigationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RobotSpiders.Controllers.RobotSpidersController",
+    "Method": "Start",
+    "RelativePath": "RobotSpiders/Start",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

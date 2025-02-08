@@ -1,0 +1,79 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "RobotSpiders",
+    "version": "1.0"
+  },
+  "paths": {
+    "/RobotSpiders/JSONStart": {
+      "post": {
+        "tags": [
+          "RobotSpiders"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiderNavigationRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiderNavigationRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiderNavigationRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/RobotSpiders/Start": {
+      "post": {
+        "tags": [
+          "RobotSpiders"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SpiderNavigationRequestDto": {
+        "type": "object",
+        "properties": {
+          "Wall": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "SpiderPosition": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "Directions": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
