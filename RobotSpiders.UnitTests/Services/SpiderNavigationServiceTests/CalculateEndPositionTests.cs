@@ -1,8 +1,9 @@
 ﻿using AutoFixture;
 using AutoFixture.AutoMoq;
 using RobotSpiders.Classes;
+using RobotSpiders.Services;
 
-namespace RobotSpiders.UnitTests.Services.SpiderNavigationService
+namespace RobotSpiders.UnitTests.Services.SpiderNavigationServiceTests
 {
     public class CalculateEndPositionTests
     {
@@ -23,7 +24,7 @@ namespace RobotSpiders.UnitTests.Services.SpiderNavigationService
 
             SpiderPosition expectedPosition = new(3, 1, Enums.Orientation.Right);
 
-            var sut = _fixture.Build<RobotSpiders.Services.SpiderNavigationService>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<SpiderNavigationService>().OmitAutoProperties().Create();
 
             // Act
             var result = sut.CalculateEndPosition(wall, spider, directions);
@@ -45,7 +46,7 @@ namespace RobotSpiders.UnitTests.Services.SpiderNavigationService
 
             SpiderPosition expectedPosition = new(3, 1, Enums.Orientation.Right);
 
-            var sut = _fixture.Build<RobotSpiders.Services.SpiderNavigationService>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<SpiderNavigationService>().OmitAutoProperties().Create();
 
             // Act
             var result = sut.CalculateEndPosition(wall, spider, directions);
@@ -64,7 +65,7 @@ namespace RobotSpiders.UnitTests.Services.SpiderNavigationService
 
             SpiderPosition expectedPosition = new(3, 1, Enums.Orientation.Right);
 
-            var sut = _fixture.Build<RobotSpiders.Services.SpiderNavigationService>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<SpiderNavigationService>().OmitAutoProperties().Create();
 
             // Act
             var result = sut.CalculateEndPosition(wall, spider, directions);

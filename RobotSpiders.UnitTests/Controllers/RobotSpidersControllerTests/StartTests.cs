@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 using RobotSpiders.Enums;
 using System.Text;
 
-namespace RobotSpiders.UnitTests.Controllers.RobotSpidersController
+namespace RobotSpiders.UnitTests.Controllers.RobotSpidersControllerTests
 {
     public class StartTests
     {
@@ -37,7 +37,7 @@ namespace RobotSpiders.UnitTests.Controllers.RobotSpidersController
                 .Setup(s => s.CalculateEndPosition(It.IsAny<Wall>(), It.IsAny<Spider>(), It.IsAny<string>()))
                 .Returns(expectedResult);
 
-            var sut = _fixture.Build<RobotSpiders.Controllers.RobotSpidersController>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<RobotSpidersController>().OmitAutoProperties().Create();
 
             // Act
             var result = sut.JSONStart(request);
@@ -64,7 +64,7 @@ namespace RobotSpiders.UnitTests.Controllers.RobotSpidersController
                 .Setup(s => s.CalculateEndPosition(It.IsAny<Wall>(), It.IsAny<Spider>(), It.IsAny<string>()))
                 .Returns(null as SpiderPosition);
 
-            var sut = _fixture.Build<RobotSpiders.Controllers.RobotSpidersController>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<RobotSpidersController>().OmitAutoProperties().Create();
 
             // Act
             var result = sut.JSONStart(request);
@@ -89,7 +89,7 @@ namespace RobotSpiders.UnitTests.Controllers.RobotSpidersController
                 .Setup(s => s.CalculateEndPosition(It.IsAny<Wall>(), It.IsAny<Spider>(), It.IsAny<string>()))
                 .Returns(null as SpiderPosition);
 
-            var sut = _fixture.Build<RobotSpiders.Controllers.RobotSpidersController>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<RobotSpidersController>().OmitAutoProperties().Create();
 
             // Act
             var result = sut.JSONStart(request);
@@ -113,7 +113,7 @@ namespace RobotSpiders.UnitTests.Controllers.RobotSpidersController
                 .Setup(s => s.CalculateEndPosition(It.IsAny<Wall>(), It.IsAny<Spider>(), It.IsAny<string>()))
                 .Returns(expectedResult);
 
-            var sut = _fixture.Build<RobotSpiders.Controllers.RobotSpidersController>().OmitAutoProperties().Create();
+            var sut = _fixture.Build<RobotSpidersController>().OmitAutoProperties().Create();
 
             var context = new DefaultHttpContext();
             context.Request.Body = new MemoryStream(Encoding.UTF8.GetBytes(requestText));
